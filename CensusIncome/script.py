@@ -2,8 +2,7 @@ import warnings
 warnings.filterwarnings("ignore")
 from sklearn.svm import SVC, LinearSVC
 from sklearn.tree import DecisionTreeClassifier as DTClf
-from util import preprocessor, splitfuncs, metrics
-
+from util import preprocessor, splitfuncs, metrics, resultsmngr
 
 '''
 https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html#sklearn.svm.SVC
@@ -17,34 +16,33 @@ def testmodels(*args):
     pre = preprocessor()
     trx, try_ = pre.data
     del pre
-    trx, try_, tex, tey = splitfuncs.split(trx, try_)
-
+    trx, try_, tex, tey = splitfuncs.split2(trx, try_)
     # setup our models
     models = {
-        'svc':  {'model': SVC,       'params': [[None]]},
-        'lsvc': {'model': LinearSVC, 'params': [[None]]},
-        'tclf': {'model': DTClf,     'params': [[None]]}
+        'SVC':       {'model': SVC,       'params': [None]},
+        'LinearSVC': {'model': LinearSVC, 'params': [None]},
+        'TreeClf':   {'model': DTClf,     'params': [{'max_depth': 5}, {'max_depth': 10}]}
     } if not args else args[0]
-
     # train all of the models
     for m in models:
         mdl = models[m]
         for i, p in enumerate(mdl['params']):
             # parse params and init model
-            params = p[0] if p[0] is not None else {}
+            params = p if p is not None else {}
             model = mdl['model'](**params)
             # train and predict
             model.fit(trx, try_)
             trpreds = model.predict(trx)  # sanity check
             tepreds = model.predict(tex)
             # record metrics
-            models[m]['params'][i].append({
+            models[m]['params'][i] = [models[m]['params'][i], {
                 'training-accuracy': metrics.acc(trpreds, try_),
                 'testing-accuracy':  metrics.acc(tepreds, tey),
-            })
-            
+            }]
     return models
 
 
 if __name__ == '__main__':
-    print(testmodels())
+    fname = resultsmngr.save(testmodels())
+    print(resultsmngr.load(fname))
+    print(fname)
