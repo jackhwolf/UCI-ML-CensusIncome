@@ -1,0 +1,49 @@
+{
+    "SVC": {
+        "model": "<class 'sklearn.svm._classes.SVC'>",
+        "params": [
+            [
+                null,
+                {
+                    "training-accuracy": "0.7530613147075726",
+                    "testing-accuracy": "0.7451266410290412"
+                }
+            ]
+        ]
+    },
+    "LinearSVC": {
+        "model": "<class 'sklearn.svm._classes.LinearSVC'>",
+        "params": [
+            [
+                null,
+                {
+                    "training-accuracy": "0.3441934485654922",
+                    "testing-accuracy": "0.3531361888343721"
+                }
+            ]
+        ]
+    },
+    "TreeClf": {
+        "model": "<class 'sklearn.tree._classes.DecisionTreeClassifier'>",
+        "params": [
+            [
+                {
+                    "max_depth": 5
+                },
+                {
+                    "training-accuracy": "0.8507139383758454",
+                    "testing-accuracy": "0.8506829332979711"
+                }
+            ],
+            [
+                {
+                    "max_depth": 10
+                },
+                {
+                    "training-accuracy": "0.870341717872773",
+                    "testing-accuracy": "0.8528046678159396"
+                }
+            ]
+        ]
+    }
+}
