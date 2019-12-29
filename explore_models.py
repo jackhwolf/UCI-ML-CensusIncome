@@ -10,8 +10,8 @@ https://scikit-learn.org/stable/modules/generated/sklearn.svm.LinearSVC.html#skl
 https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html#sklearn.tree.DecisionTreeClassifier
 '''
 
-# main methods to test model performance
-def testmodels(*args):
+# main methods to explore different models
+def explore_models(*args):
     # setup our data
     pre = preprocessor()
     trx, try_ = pre.data
@@ -19,9 +19,9 @@ def testmodels(*args):
     trx, try_, tex, tey = splitfuncs.split2(trx, try_)
     # setup our models
     models = {
-        'SVC':       {'model': SVC,       'params': [None]},
-        'LinearSVC': {'model': LinearSVC, 'params': [None]},
-        'TreeClf':   {'model': DTClf,     'params': [{'max_depth': 5}, {'max_depth': 10}]}
+        'SVC':       {'model': SVC,       'params': [None, {'C': 0.75}, {'C': 1.25}]},
+        'LinearSVC': {'model': LinearSVC, 'params': [None, {'C': 0.75}, {'C': 1.25}]},
+        'TreeClf':   {'model': DTClf,     'params': [None, {'max_depth': 5}, {'max_depth': 10}]}
     } if not args else args[0]
     # train all of the models
     for m in models:
@@ -29,6 +29,7 @@ def testmodels(*args):
         for i, p in enumerate(mdl['params']):
             # parse params and init model
             params = p if p is not None else {}
+            print(m, params)
             model = mdl['model'](**params)
             # train and predict
             model.fit(trx, try_)
@@ -43,6 +44,6 @@ def testmodels(*args):
 
 
 if __name__ == '__main__':
-    fname = resultsmngr.save(testmodels())
+    fname = resultsmngr.save(explore_models())
     print(resultsmngr.load(fname))
     print(fname)

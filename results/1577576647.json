@@ -1,0 +1,92 @@
+{
+    "SVC": {
+        "model": "<class 'sklearn.svm._classes.SVC'>",
+        "params": [
+            [
+                null,
+                {
+                    "training-accuracy": "0.75116042615269",
+                    "testing-accuracy": "0.7508288025460814"
+                }
+            ],
+            [
+                {
+                    "C": 0.75
+                },
+                {
+                    "training-accuracy": "0.75116042615269",
+                    "testing-accuracy": "0.7508288025460814"
+                }
+            ],
+            [
+                {
+                    "C": 1.25
+                },
+                {
+                    "training-accuracy": "0.75116042615269",
+                    "testing-accuracy": "0.7508288025460814"
+                }
+            ]
+        ]
+    },
+    "LinearSVC": {
+        "model": "<class 'sklearn.svm._classes.LinearSVC'>",
+        "params": [
+            [
+                null,
+                {
+                    "training-accuracy": "0.2948145528491225",
+                    "testing-accuracy": "0.2938602307386288"
+                }
+            ],
+            [
+                {
+                    "C": 0.75
+                },
+                {
+                    "training-accuracy": "0.799566774236329",
+                    "testing-accuracy": "0.8024134730141891"
+                }
+            ],
+            [
+                {
+                    "C": 1.25
+                },
+                {
+                    "training-accuracy": "0.767561115777375",
+                    "testing-accuracy": "0.7659461609866065"
+                }
+            ]
+        ]
+    },
+    "TreeClf": {
+        "model": "<class 'sklearn.tree._classes.DecisionTreeClassifier'>",
+        "params": [
+            [
+                null,
+                {
+                    "training-accuracy": "0.9999557932894213",
+                    "testing-accuracy": "0.8091765017902135"
+                }
+            ],
+            [
+                {
+                    "max_depth": 5
+                },
+                {
+                    "training-accuracy": "0.8423588700764776",
+                    "testing-accuracy": "0.8473677231136454"
+                }
+            ],
+            [
+                {
+                    "max_depth": 10
+                },
+                {
+                    "training-accuracy": "0.8672472481322665",
+                    "testing-accuracy": "0.8456438138177961"
+                }
+            ]
+        ]
+    }
+}

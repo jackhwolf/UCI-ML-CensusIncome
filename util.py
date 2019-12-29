@@ -16,7 +16,7 @@ class preprocessor:
             'marital-status', 'occupation', 'relationship', 'race', 
             'sex', 'capital-gain', 'capital-loss', 'hours-per-week', 
             'native-country', 'label']
-        self.feats = pd.read_csv('../data/train.csv', header=None, names=self.cols)
+        self.feats = pd.read_csv('data/train.csv', header=None, names=self.cols)
         self.rmmissing()
         self.labels = self.feats['label']
         del self.feats['label']
