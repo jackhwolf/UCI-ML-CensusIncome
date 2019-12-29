@@ -1,4 +1,5 @@
 attrs==19.3.0
+autopep8==1.4.4
 backcall==0.1.0
 bleach==3.1.0
 cycler==0.10.0
@@ -36,6 +37,7 @@ pkg-resources==0.0.0
 prometheus-client==0.7.1
 prompt-toolkit==3.0.2
 ptyprocess==0.6.0
+pycodestyle==2.5.0
 Pygments==2.5.2
 pyparsing==2.4.6
 pyrsistent==0.15.6
