@@ -57,6 +57,17 @@ class splitfuncs:
         trx, try_ = x.loc[loc], y.loc[loc]
         return trx, try_, x.drop(loc, axis=0), y.drop(loc)
     
+    def splitBalanced(x, y, tr_perc=0.75):
+        ''' take random balanced sample of N*tr_perc samples to train on '''
+        y.index = x.index
+        n = int(min(y.value_counts()) * tr_perc)
+        loc = []
+        for u in y.unique():
+            loc.extend(np.random.choice(y[y == u].index, size=n, replace=False))
+        trx, try_ = x.loc[loc], y.loc[loc]
+        return trx, try_, x.drop(loc, axis=0), y.drop(loc)
+        
+    
 # functions to record metrics
 class metrics:
     

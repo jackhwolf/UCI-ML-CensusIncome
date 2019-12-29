@@ -16,7 +16,7 @@ def explore_models(*args):
     pre = preprocessor()
     trx, try_ = pre.data
     del pre
-    trx, try_, tex, tey = splitfuncs.split2(trx, try_)
+    trx, try_, tex, tey = splitfuncs.splitBalanced(trx, try_)
     # setup our models
     models = {
         'SVC':       {'model': SVC,       'params': [None, {'C': 0.75}, {'C': 1.25}]},
