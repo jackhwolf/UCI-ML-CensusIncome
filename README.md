@@ -4,5 +4,7 @@
 
 Check out <a href="https://github.com/jackhwolf/UCI-ML-CensusIncome/blob/master/Notebook.ipynb">`Notebook.ipynb`</a>
 
+<img src="Notebook.pdf"/>
+
 Jack Wolf, UW-Madison CS `21
 
