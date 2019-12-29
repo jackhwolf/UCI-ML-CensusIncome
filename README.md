@@ -2,7 +2,7 @@
 
 ## source:  https://archive.ics.uci.edu/ml/datasets/Adult
 
-Check out `Notebook.ipynb`
+Check out <a href="https://github.com/jackhwolf/UCI-ML-CensusIncome/blob/master/Notebook.ipynb">`Notebook.ipynb`</a>
 
 Jack Wolf, UW-Madison CS `21
 
